@@ -3,9 +3,11 @@ package com.womandroid.stepup.profile
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v4.view.ViewCompat
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Window
@@ -18,6 +20,14 @@ import android.view.ViewGroup
 
 
 class ProfileDescriptionActivity : AppCompatActivity() {
+
+    companion object {
+        @JvmStatic
+        fun getIntent(context: Context): Intent {
+            return Intent(context, ProfileDescriptionActivity::class.java)
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

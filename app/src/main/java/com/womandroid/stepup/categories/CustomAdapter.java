@@ -7,13 +7,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.womandroid.stepup.data.DataModel;
+import com.womandroid.stepup.data.CategoryListDataModel;
 import com.womandroid.stepup.R;
+import com.womandroid.stepup.data.CategoryListDataModel.CategoryDataModel;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private ArrayList<DataModel> dataSet;
+    private List<CategoryDataModel> dataSet;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -27,8 +29,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         }
     }
 
-    public CustomAdapter(ArrayList<DataModel> data) {
+    public CustomAdapter(List<CategoryDataModel> data) {
         this.dataSet = data;
+    }
+
+    public void addData(List<CategoryDataModel> data){
+        this.dataSet.clear();
+        this.dataSet.addAll(data);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -49,8 +57,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         TextView textViewName = holder.textViewName;
         ImageView imageView = holder.imageViewIcon;
 
-        textViewName.setText(dataSet.get(listPosition).getName());
-        imageView.setImageResource(dataSet.get(listPosition).getImage());
+        textViewName.setText(dataSet.get(listPosition).name);
+       // imageView.setImageResource(dataSet.get(listPosition).id);
     }
 
     @Override
