@@ -1,7 +1,8 @@
-package com.womandroid.stepup;
+package com.womandroid.stepup.categories;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import com.womandroid.stepup.R;
 
 public class CategoryDescriptionActivity extends AppCompatActivity {
 
