@@ -67,6 +67,7 @@ public class CategoryActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+
         }
 
     }
