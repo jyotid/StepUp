@@ -25,10 +25,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".CategoryActivity"
+            android:name=".categories.CategoryActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".CategoryDescriptionActivity"></activity>
     </application>
-
 </manifest>

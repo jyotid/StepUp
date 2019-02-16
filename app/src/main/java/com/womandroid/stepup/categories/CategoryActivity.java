@@ -1,15 +1,18 @@
-package com.womandroid.stepup;
+package com.womandroid.stepup.categories;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
 
+import com.womandroid.stepup.data.DataModel;
+import com.womandroid.stepup.LoginActivity;
+import com.womandroid.stepup.R;
+import com.womandroid.stepup.data.MyData;
 import java.util.ArrayList;
 
 public class CategoryActivity extends AppCompatActivity {
@@ -20,6 +23,10 @@ public class CategoryActivity extends AppCompatActivity {
     private static ArrayList<DataModel> data;
     static View.OnClickListener myOnClickListener;
     private static ArrayList<Integer> removedItems;
+
+    public static Intent getIntent(Context context){
+        return new Intent(context, CategoryActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
