@@ -1,0 +1,38 @@
+{
+	"categories": [
+		{ 
+			"id" : "c0001",
+			"name" : "Education",
+			"url" : "https://i.imgur.com/Y5j53Lk.png"
+		},
+			
+			"id" : "c0002",
+			"name" : "Technology",
+			"url" : "https://i.imgur.com/aaivSIB.png"
+		},
+		{
+			"id" : "c0003",
+			"name" : "Sciences",
+			"url" : "https://i.imgur.com/PzTHAUT.png"
+		},
+		{
+			"id" : "c0004",
+			"name" : "Fashion",
+			"url" : "https://i.imgur.com/dstYgKA.png"
+		},
+		{
+			"id" : "c0005",
+			"name" : "Healthcare",
+			"url" : "https://i.imgur.com/0mHGo5S.png"
+		},
+		{
+			"id" : "c0006",
+			"name" : "Entrepreneurship",
+			"url" : "https://i.imgur.com/ko1dOqQ.png"
+		}
+		
+			
+	]
+	
+	
+}
