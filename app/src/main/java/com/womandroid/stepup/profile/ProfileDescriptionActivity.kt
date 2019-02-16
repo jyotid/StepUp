@@ -1,16 +1,13 @@
-package com.womandroid.stepup
+package com.womandroid.stepup.profile
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewCompat
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.activity_profile_description.*
 import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.RecyclerView
-
-
-
+import com.womandroid.stepup.QuestionAskedAdpter
+import com.womandroid.stepup.R
 
 
 class ProfileDescriptionActivity : AppCompatActivity() {

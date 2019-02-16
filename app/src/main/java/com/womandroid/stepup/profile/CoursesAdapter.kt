@@ -1,10 +1,11 @@
-package com.womandroid.stepup
+package com.womandroid.stepup.profile
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.womandroid.stepup.R
 import kotlinx.android.synthetic.main.item_courses.view.*
 
 class CoursesAdapter(val context: Context) : RecyclerView.Adapter<ViewHolder>() {

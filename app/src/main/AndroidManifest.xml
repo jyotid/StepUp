@@ -25,9 +25,15 @@
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".ProfileDescriptionActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".profile.ProfileDescriptionActivity"></activity>
+
+      <activity
+        android:name=".categories.CategoryActivity"
+        android:screenOrientation="portrait" />
+
+      <activity android:name=".categories.CategoryDescriptionActivity"></activity>
     </application>
 
-</manifest>
 
+
+</manifest>
