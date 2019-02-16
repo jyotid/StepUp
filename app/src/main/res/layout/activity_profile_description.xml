@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#8038d8"
+        android:background="@color/white"
         android:orientation="vertical"
         tools:context=".ProfileDescriptionActivity">
 
@@ -19,9 +18,10 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="200dp"
+                android:background="@drawable/gradientbg" />
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/icProfile"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
@@ -38,7 +38,7 @@
                 android:layout_below="@+id/icProfile"
                 android:layout_centerHorizontal="true"
                 android:text="Rachel Green"
-                android:textColor="#fff" />
+                android:textColor="@color/white" />
 
 
             <TextView
@@ -49,7 +49,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:text="Director of Engineering"
-                android:textColor="#fff" />
+                android:textColor="@color/white" />
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -58,16 +58,21 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:background="#fff"
+                android:layout_marginBottom="20dp"
                 app:cardCornerRadius="8dp">
 
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#fff"
-                    android:padding="10dp"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras purus tellus, aliquet et iaculis quis, tristique sit amet eros. Nunc euismod imperdiet eleifend" />
+                    android:background="#000">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:padding="10dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras purus tellus, aliquet et iaculis quis, tristique sit amet eros. Nunc euismod imperdiet eleifend" />
+                </RelativeLayout>
             </android.support.v7.widget.CardView>
         </RelativeLayout>
 
@@ -76,15 +81,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Courses"
-            android:textColor="#fff"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvCourses"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,14 +98,16 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="40dp"
             android:text="Questions Answered"
-            android:textColor="#fff"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvQuestions"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:nestedScrollingEnabled="false" />
 
     </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
+</ScrollView>
