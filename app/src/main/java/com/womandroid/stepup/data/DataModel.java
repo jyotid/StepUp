@@ -1,4 +1,4 @@
-package com.womandroid.stepup;
+package com.womandroid.stepup.data;
 
 public class DataModel {
 

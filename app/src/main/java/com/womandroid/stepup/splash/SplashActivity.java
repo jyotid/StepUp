@@ -2,9 +2,8 @@ package com.womandroid.stepup.splash;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import com.womandroid.stepup.CategoryActivity;
+import com.womandroid.stepup.categories.CategoryActivity;
 import com.womandroid.stepup.LoginActivity;
-import com.womandroid.stepup.MainActivity;
 import com.womandroid.stepup.R;
 
 /**

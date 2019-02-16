@@ -1,4 +1,4 @@
-package com.womandroid.stepup;
+package com.womandroid.stepup.categories;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.womandroid.stepup.data.DataModel;
+import com.womandroid.stepup.R;
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
