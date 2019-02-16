@@ -14,9 +14,9 @@ public class SplashPresenter {
 
   public void performUserLoginStatusCheck() {
     if (true) {//user is logged in
-      view.showLoginScreen();
-    } else {
       view.showHomeScreen();
+    } else {
+      view.showLoginScreen();
     }
   }
 }
