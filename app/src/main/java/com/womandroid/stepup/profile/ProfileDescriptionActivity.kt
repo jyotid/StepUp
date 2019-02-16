@@ -1,5 +1,7 @@
 package com.womandroid.stepup.profile
 
+import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewCompat
@@ -12,6 +14,14 @@ import com.womandroid.stepup.R
 
 class ProfileDescriptionActivity : AppCompatActivity() {
 
+    companion object {
+        @JvmStatic
+        fun getIntent(context: Context): Intent {
+            return Intent(context, ProfileDescriptionActivity::class.java)
+        }
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_description)
@@ -21,7 +31,7 @@ class ProfileDescriptionActivity : AppCompatActivity() {
     private fun initViews() {
         rvCourses.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCourses.adapter = CoursesAdapter(this)
-        rvCourses.setItemAnimator(DefaultItemAnimator())
+        rvCourses.itemAnimator = DefaultItemAnimator()
 
 //        val layoutManager = object : LinearLayoutManager(this) {
 //            override fun canScrollVertically(): Boolean {
