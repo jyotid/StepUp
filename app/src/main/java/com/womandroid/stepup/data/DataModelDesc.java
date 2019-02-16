@@ -2,8 +2,8 @@ package com.womandroid.stepup.data;
 
 public class DataModelDesc {
 
-    String name, professionalTitle, location, categories;
-    int image;
+    public String name, professionalTitle, location, categories;
+    public int image;
 
     public DataModelDesc(String name, int image, String professionalTitle, String location, String categories) {
         this.name = name;
@@ -22,14 +22,14 @@ public class DataModelDesc {
     }
 
     public String getProfessionalTitle() {
-        return name;
+        return professionalTitle;
     }
 
     public String getLocation() {
-        return name;
+        return location;
     }
 
     public String getCategories() {
-        return name;
+        return categories;
     }
 }

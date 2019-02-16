@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 public class CategoryDescriptionActivity extends AppCompatActivity {
 
-    private static RecyclerView.Adapter adapter;
+    private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private static RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private ArrayList<DataModelDesc> data;
     static View.OnClickListener myOnClickListener;
     private static ArrayList<Integer> removedItems;

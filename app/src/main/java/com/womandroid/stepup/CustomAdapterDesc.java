@@ -1,6 +1,7 @@
 package com.womandroid.stepup;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ public class CustomAdapterDesc extends RecyclerView.Adapter<CustomAdapterDesc.My
 
     private ArrayList<DataModelDesc> dataSet;
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewName;
         TextView textViewProfessionalTitle;
@@ -51,7 +52,7 @@ public class CustomAdapterDesc extends RecyclerView.Adapter<CustomAdapterDesc.My
     }
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
+    public void onBindViewHolder(MyViewHolder holder, final int listPosition) {
 
         TextView textViewName = holder.textViewName;
         TextView textViewProfessionalTitle = holder.textViewProfessionalTitle;
@@ -59,6 +60,7 @@ public class CustomAdapterDesc extends RecyclerView.Adapter<CustomAdapterDesc.My
         TextView textViewLocation = holder.textViewLocation;
         TextView textViewCategories = holder.textViewCategories;
 
+        Log.d("Name : ","adapter"+dataSet.get(listPosition).getProfessionalTitle()+" "+listPosition);
         textViewName.setText(dataSet.get(listPosition).getName());
         textViewProfessionalTitle.setText(dataSet.get(listPosition).getProfessionalTitle());
         imageView.setImageResource(dataSet.get(listPosition).getImage());
