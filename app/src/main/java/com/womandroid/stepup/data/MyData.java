@@ -12,4 +12,11 @@ public class MyData {
             R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,R.drawable.ic_launcher_background};
 
 //    static Integer[] id_ = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+    public static String[] profileName = {"Ekta Nijhawan","Aparajitha Murali","Jyoti Dubey","Shradha Gurjar"};
+    public static String[] location = {"Delhi","Bengaluru","Chennai","Bengaluru"};
+    public static Integer[] profile = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_background};
+    public static String[] categories = {"abc","def","ghi","jkl"};
+    public static String[] profession = {"abc","def","ghi","jkl"};
 }

@@ -9,6 +9,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.womandroid.stepup.CategoryDescriptionActivity;
 import com.womandroid.stepup.data.DataModel;
 import com.womandroid.stepup.LoginActivity;
 import com.womandroid.stepup.R;
@@ -57,7 +58,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
 
-    private static class MyOnClickListener implements View.OnClickListener {
+    private class MyOnClickListener implements View.OnClickListener {
 
         private final Context context;
 
@@ -67,6 +68,8 @@ public class CategoryActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+            Intent intent = new Intent(CategoryActivity.this, CategoryDescriptionActivity.class);
+            startActivity(intent);
         }
 
     }
