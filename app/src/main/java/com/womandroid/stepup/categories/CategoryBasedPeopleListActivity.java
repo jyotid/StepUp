@@ -30,7 +30,6 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity {
     private static ArrayList<Integer> removedItems;
     boolean isFABOpen = false;
     FloatingActionButton fab1, fab2;
-    FrameLayout frame1, frame2, frame;
 
     public static Intent getIntent(Context context){
         return new Intent(context, com.womandroid.stepup.categories.CategoryBasedPeopleListActivity.class);
@@ -63,42 +62,8 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity {
             ));
         }
 
-        adapter = new CustomAdapterDesc(data);
+        adapter = new CustomAdapterDesc(this,data);
         recyclerView.setAdapter(adapter);
-
-         frame1 = (FrameLayout)findViewById(R.id.frame1);
-         frame2 = (FrameLayout)findViewById(R.id.frame2);
-         frame = (FrameLayout)findViewById(R.id.frame);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        frame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!isFABOpen){
-                    showFABMenu();
-                }else{
-                    closeFABMenu();
-                }
-            }
-        });
-    }
-
-    private void showFABMenu(){
-        isFABOpen=true;
-        frame2.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
-        frame1.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
-
-        frame1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Clicked","frame1");
-            }
-        });
-    }
-
-    private void closeFABMenu(){
-        isFABOpen=false;
-        frame2.animate().translationY(0);
-        frame1.animate().translationY(0);
     }
 
 
@@ -117,5 +82,25 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity {
         }
 
     }
+
+    /*private void showFABMenu(){
+        isFABOpen=true;
+        frame2.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
+        frame1.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
+
+        frame1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Clicked","frame1");
+            }
+        });
+    }
+
+    private void closeFABMenu(){
+        isFABOpen=false;
+        frame2.animate().translationY(0);
+        frame1.animate().translationY(0);
+    }*/
+
 
 }

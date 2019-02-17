@@ -19,23 +19,30 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".profile.ProfileDescriptionActivity"/>
-
-      <activity
-        android:name=".categories.CategoriesActivity"
-        android:screenOrientation="portrait" />
         <activity
-          android:name=".categories.CategoryBasedPeopleListActivity"
-          android:screenOrientation="portrait" />
-    </application>
+            android:name=".profile.ProfileDescriptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <activity
+            android:name=".categories.CategoriesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".categories.CategoryBasedPeopleListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+    </application>
 
 
 </manifest>
