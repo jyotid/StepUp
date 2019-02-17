@@ -20,7 +20,7 @@ class CategoryBasePeopleListPresenter {
     fun getData() {
         try {
             val obj = JSONObject(loadJSONFromAsset())
-            val countries = obj.getJSONArray("countries")
+            val countries = obj.getJSONArray("mentors")
             for (i in 0 until countries.length()) {
                 val jsonObject = countries.getJSONObject(i)
                 val code = jsonObject.getString("code")
