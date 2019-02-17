@@ -19,12 +19,18 @@ import com.womandroid.stepup.data.DataModelDesc;
 import com.womandroid.stepup.data.MyData;
 
 import com.womandroid.stepup.data.PeopleListDataModel;
+
+import com.womandroid.stepup.onAdapterClickListener;
 import com.womandroid.stepup.profile.ProfileDescriptionActivity;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 
-public class CategoryBasedPeopleListActivity extends AppCompatActivity {
+public class CategoryBasedPeopleListActivity extends AppCompatActivity implements onAdapterClickListener {
 
-    private RecyclerView.Adapter adapter;
+    private CustomAdapterDesc adapter;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private ArrayList<DataModelDesc> data;
@@ -32,6 +38,8 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity {
     private static ArrayList<Integer> removedItems;
     boolean isFABOpen = false;
     FloatingActionButton fab1, fab2;
+    private CategoryBasePeopleListPresenter presenter;
+
 
     public static Intent getIntent(Context context){
         return new Intent(context, com.womandroid.stepup.categories.CategoryBasedPeopleListActivity.class);
@@ -42,9 +50,14 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_description);
         myOnClickListener = new MyOnClickListener(CategoryBasedPeopleListActivity.this);
+        presenter = new CategoryBasePeopleListPresenter();
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
+        adapter = new CustomAdapterDesc(this,this);
+        recyclerView.setAdapter(adapter);
+
+
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -53,19 +66,22 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity {
         recyclerView.setLayoutAnimation(animation);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        data = new ArrayList<DataModelDesc>();
-        for (int i = 0; i < MyData.profileName.length; i++) {
-            data.add(new DataModelDesc(
-                    MyData.profileName[i],
-                    MyData.profile[i],
-                    MyData.profession[i],
-                    MyData.location[i],
-                    MyData.categories[i]
-            ));
-        }
+        presenter.onViewAttached(this);
 
-        adapter = new CustomAdapterDesc(this,data);
-        recyclerView.setAdapter(adapter);
+        presenter.getData();
+
+    }
+
+    public void getMentorList(@Nullable ArrayList<PeopleListDataModel> mentorList) {
+        adapter.updateList(mentorList);
+    }
+
+    @Override
+    public void onAdapterClick(@NotNull Object data) {
+        PeopleListDataModel peopleListDataModel = (PeopleListDataModel) data;
+        Intent intent = new Intent(CategoryBasedPeopleListActivity.this, ProfileDescriptionActivity.class);
+        intent.putExtra("person",peopleListDataModel);
+        startActivity(intent);
     }
 
 
@@ -79,8 +95,7 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(CategoryBasedPeopleListActivity.this, ProfileDescriptionActivity.class);
-            startActivity(intent);
+
         }
 
     }

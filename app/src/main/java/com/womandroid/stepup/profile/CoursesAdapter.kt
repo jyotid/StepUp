@@ -6,20 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.womandroid.stepup.R
+import com.womandroid.stepup.data.CoursesDataModel
 import kotlinx.android.synthetic.main.item_courses.view.*
 
-class CoursesAdapter(val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+class CoursesAdapter(val context: Context, val data : List<CoursesDataModel>) : RecyclerView.Adapter<ViewHolder>() {
+
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
 
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_courses, null, false))
     }
 
-    override fun onBindViewHolder(viewHolde: ViewHolder, p1: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, p1: Int) {
+        viewHolder.tvCourseName?.text = data[p1].courseName
+        viewHolder.tvCourseDesc?.text = data[p1].duration
+
     }
 
     // Gets the number of animals in the list
     override fun getItemCount(): Int {
-        return 5
+        return data.size
     }
 }
 

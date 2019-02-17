@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
+    android:id="@+id/viewPerson"
     android:orientation="vertical"
     android:tag="cards main container">
 
@@ -48,8 +49,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="20dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_profile"
-                    android:tag="image_tag" />
+                    android:src="@drawable/ic_profile" />
 
                 <LinearLayout
                     android:layout_width="0dp"
