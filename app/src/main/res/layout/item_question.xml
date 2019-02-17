@@ -52,6 +52,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -65,7 +66,8 @@
                 android:background="@color/white" />
 
             <TextView
-                android:layout_width="wrap_content"
+              android:id="@+id/answer"
+              android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras purus tellus, aliquet et iaculis quis, tristique sit amet eros. Nunc euismod imperdiet eleifend"

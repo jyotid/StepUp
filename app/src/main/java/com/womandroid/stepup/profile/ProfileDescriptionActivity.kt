@@ -38,12 +38,12 @@ class ProfileDescriptionActivity : AppCompatActivity() {
 
     private fun initViews() {
         rvCourses.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvCourses.adapter = CoursesAdapter(this)
+        rvCourses.adapter = CoursesAdapter(this, mutableListOf())
         rvCourses.itemAnimator = DefaultItemAnimator()
 
 
         rvQuestions.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvQuestions.adapter = QuestionAskedAdpter(this)
+        rvQuestions.adapter = QuestionAskedAdpter(this, mutableListOf())
         rvQuestions.itemAnimator = DefaultItemAnimator()
         ViewCompat.setNestedScrollingEnabled(rvQuestions, false)
 
@@ -58,7 +58,6 @@ class ProfileDescriptionActivity : AppCompatActivity() {
                     Snackbar.LENGTH_SHORT // How long to display the message.
             ).show()
         }
-
 
     }
 
