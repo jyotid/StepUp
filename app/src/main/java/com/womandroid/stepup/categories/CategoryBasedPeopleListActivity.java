@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.FrameLayout;
+import android.widget.Toast;
+
 import com.womandroid.stepup.R;
 import com.womandroid.stepup.data.CoursesDataModel;
 import com.womandroid.stepup.data.DataModelDesc;
@@ -38,6 +40,7 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity implement
     private static ArrayList<Integer> removedItems;
     boolean isFABOpen = false;
     FloatingActionButton fab1, fab2;
+    int count = 0;
     private CategoryBasePeopleListPresenter presenter;
 
 
@@ -52,6 +55,7 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity implement
         myOnClickListener = new MyOnClickListener(CategoryBasedPeopleListActivity.this);
         presenter = new CategoryBasePeopleListPresenter();
 
+        fab2 = (FloatingActionButton)findViewById(R.id.fab2);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         adapter = new CustomAdapterDesc(this,this);
@@ -69,6 +73,18 @@ public class CategoryBasedPeopleListActivity extends AppCompatActivity implement
         presenter.onViewAttached(this);
 
         presenter.getData();
+
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                count++;
+                if(count/2 == 0) {
+                    Toast.makeText(CategoryBasedPeopleListActivity.this,"You are mentee now",Toast.LENGTH_LONG).show();
+                }else {
+                    Toast.makeText(CategoryBasedPeopleListActivity.this,"You are mentor now",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
     }
 
