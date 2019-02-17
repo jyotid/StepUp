@@ -4,9 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.womandroid.stepup.categories.CategoryActivity;
-
-import com.womandroid.stepup.categories.CategoryActivity;
+import android.view.View;
+import com.womandroid.stepup.categories.CategoriesActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -17,7 +16,12 @@ public class LoginActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
-    Intent intent = new Intent(LoginActivity.this,CategoryActivity.class);
+    Intent intent = new Intent(LoginActivity.this,CategoriesActivity.class);
     startActivity(intent);
+  }
+
+  public void onLoginButtonClick(View view){
+    startActivity(CategoriesActivity.getIntent(this));
+
   }
 }

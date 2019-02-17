@@ -8,53 +8,42 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
-import com.womandroid.stepup.CategoryDescriptionActivity;
-import com.womandroid.stepup.data.DataModel;
-import com.womandroid.stepup.LoginActivity;
 import com.womandroid.stepup.R;
-import com.womandroid.stepup.data.MyData;
+import com.womandroid.stepup.data.CategoryListDataModel.CategoryDataModel;
 import java.util.ArrayList;
+import java.util.List;
 
-public class CategoryActivity extends AppCompatActivity {
-
-    private static RecyclerView.Adapter adapter;
+public class CategoriesActivity extends AppCompatActivity {
     private GridLayoutManager layoutManager;
     private static RecyclerView recyclerView;
-    private static ArrayList<DataModel> data;
+    private CustomAdapter adapter = new CustomAdapter(new ArrayList<CategoryDataModel>());
     static View.OnClickListener myOnClickListener;
-    private static ArrayList<Integer> removedItems;
+    private CategoryPresenter presenter = new CategoryPresenter();
 
     public static Intent getIntent(Context context){
-        return new Intent(context, CategoryActivity.class);
+        return new Intent(context, CategoriesActivity.class);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+        presenter.onViewAttached(this);
+        presenter.getCategoryData();
 
-        myOnClickListener = new MyOnClickListener(CategoryActivity.this);
+        myOnClickListener = new MyOnClickListener(CategoriesActivity.this);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        data = new ArrayList<DataModel>();
-        for (int i = 0; i < MyData.nameArray.length; i++) {
-            data.add(new DataModel(
-                    MyData.nameArray[i],
-                    MyData.drawableArray[i]
-            ));
-        }
-
-        removedItems = new ArrayList<Integer>();
-
-        adapter = new CustomAdapter(data);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void onCategoryDataReceived(List<CategoryDataModel> categoryListDataModel){
+        adapter.addData(categoryListDataModel);
     }
 
 
@@ -68,7 +57,7 @@ public class CategoryActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(CategoryActivity.this, CategoryDescriptionActivity.class);
+            Intent intent = new Intent(CategoriesActivity.this, CategoryBasedPeopleListActivity.class);
             startActivity(intent);
         }
 

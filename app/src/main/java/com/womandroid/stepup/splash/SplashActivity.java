@@ -2,7 +2,7 @@ package com.womandroid.stepup.splash;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import com.womandroid.stepup.categories.CategoryActivity;
+import com.womandroid.stepup.categories.CategoriesActivity;
 import com.womandroid.stepup.LoginActivity;
 import com.womandroid.stepup.R;
 
@@ -27,6 +27,6 @@ public class SplashActivity extends AppCompatActivity {
   }
 
   public void showHomeScreen(){
-    startActivity(CategoryActivity.getIntent(this));
+    startActivity(CategoriesActivity.getIntent(this));
   }
 }

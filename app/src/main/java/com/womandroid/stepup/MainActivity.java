@@ -3,7 +3,7 @@ package com.womandroid.stepup;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.womandroid.stepup.categories.CategoryActivity;
+import com.womandroid.stepup.categories.CategoriesActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
 //
-    Intent intent = new Intent(MainActivity.this,CategoryActivity.class);
+    Intent intent = new Intent(MainActivity.this,CategoriesActivity.class);
     startActivity(intent);
 
 

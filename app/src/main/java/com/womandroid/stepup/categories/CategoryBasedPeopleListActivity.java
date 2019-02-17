@@ -1,6 +1,7 @@
-package com.womandroid.stepup;
+package com.womandroid.stepup.categories;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,16 +13,14 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import com.womandroid.stepup.data.DataModel;
+import com.womandroid.stepup.R;
 import com.womandroid.stepup.data.DataModelDesc;
 import com.womandroid.stepup.data.MyData;
 
+import com.womandroid.stepup.profile.ProfileDescriptionActivity;
 import java.util.ArrayList;
 
-public class CategoryDescriptionActivity extends AppCompatActivity {
+public class CategoryBasedPeopleListActivity extends AppCompatActivity {
 
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -33,11 +32,15 @@ public class CategoryDescriptionActivity extends AppCompatActivity {
     FloatingActionButton fab1, fab2;
     FrameLayout frame1, frame2, frame;
 
+    public static Intent getIntent(Context context){
+        return new Intent(context, com.womandroid.stepup.categories.CategoryBasedPeopleListActivity.class);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_description);
-        myOnClickListener = new MyOnClickListener(CategoryDescriptionActivity.this);
+        myOnClickListener = new MyOnClickListener(CategoryBasedPeopleListActivity.this);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -45,7 +48,7 @@ public class CategoryDescriptionActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         int resId = R.anim.layout_animation_fall_down;
-        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(CategoryDescriptionActivity.this, resId);
+        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(CategoryBasedPeopleListActivity.this, resId);
         recyclerView.setLayoutAnimation(animation);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -109,7 +112,8 @@ public class CategoryDescriptionActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-
+            Intent intent = new Intent(CategoryBasedPeopleListActivity.this, ProfileDescriptionActivity.class);
+            startActivity(intent);
         }
 
     }

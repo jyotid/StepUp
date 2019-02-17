@@ -1,4 +1,4 @@
-package com.womandroid.stepup;
+package com.womandroid.stepup.categories;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -7,8 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.womandroid.stepup.data.DataModel;
+import com.womandroid.stepup.R;
 import com.womandroid.stepup.data.DataModelDesc;
 
 import java.util.ArrayList;
@@ -45,7 +44,7 @@ public class CustomAdapterDesc extends RecyclerView.Adapter<CustomAdapterDesc.My
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_category_description, parent, false);
 
-        view.setOnClickListener(CategoryDescriptionActivity.myOnClickListener);
+        view.setOnClickListener(CategoryBasedPeopleListActivity.myOnClickListener);
 
         MyViewHolder myViewHolder = new MyViewHolder(view);
         return myViewHolder;

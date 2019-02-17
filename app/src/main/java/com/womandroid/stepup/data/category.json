@@ -1,0 +1,34 @@
+{
+	"categories": [
+		{ 
+			"id" : "c0001",
+			"name" : "Education"
+		},
+		{
+			"id" : "c0002",
+			"name" : "Technology"
+
+		},
+		{
+			"id" : "c0003",
+			"name" : "Sciences"
+		},
+		{
+			"id" : "c0004",
+			"name" : "Fashion"
+		},
+		{
+			"id" : "c0005",
+			"name" : "Healthcare"
+		},
+		{
+			"id" : "c0006",
+			"name" : "Entrepreneurship"
+
+		}
+		
+			
+	]
+	
+	
+}
