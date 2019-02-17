@@ -1,12 +1,16 @@
 package com.womandroid.stepup;
 
 import android.content.Context;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.womandroid.stepup.data.DataModel;
@@ -23,6 +27,9 @@ public class CategoryDescriptionActivity extends AppCompatActivity {
     private ArrayList<DataModelDesc> data;
     static View.OnClickListener myOnClickListener;
     private static ArrayList<Integer> removedItems;
+    boolean isFABOpen = false;
+    FloatingActionButton fab1, fab2;
+    FrameLayout frame1, frame2, frame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,40 @@ public class CategoryDescriptionActivity extends AppCompatActivity {
 
         adapter = new CustomAdapterDesc(data);
         recyclerView.setAdapter(adapter);
+
+         frame1 = (FrameLayout)findViewById(R.id.frame1);
+         frame2 = (FrameLayout)findViewById(R.id.frame2);
+         frame = (FrameLayout)findViewById(R.id.frame);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        frame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!isFABOpen){
+                    showFABMenu();
+                }else{
+                    closeFABMenu();
+                }
+            }
+        });
+    }
+
+    private void showFABMenu(){
+        isFABOpen=true;
+        frame2.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
+        frame1.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
+
+        frame1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Clicked","frame1");
+            }
+        });
+    }
+
+    private void closeFABMenu(){
+        isFABOpen=false;
+        frame2.animate().translationY(0);
+        frame1.animate().translationY(0);
     }
 
 
