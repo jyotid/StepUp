@@ -10,10 +10,12 @@ public class CategoryListDataModel {
     public static class CategoryDataModel{
         public final String name;
         public final String id;
+        public final int image;
 
-        public CategoryDataModel(String name, String id) {
+        public CategoryDataModel(String name, String id, int image) {
             this.name = name;
             this.id=id;
+            this.image = image;
         }
     }
 
