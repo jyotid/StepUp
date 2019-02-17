@@ -8,17 +8,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
-import com.womandroid.stepup.data.CategoryListDataModel;
 import com.womandroid.stepup.R;
 import com.womandroid.stepup.data.CategoryListDataModel.CategoryDataModel;
-import com.womandroid.stepup.data.MyData;
 import com.womandroid.stepup.profile.ProfileDescriptionActivity;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryActivity extends AppCompatActivity {
-
     private GridLayoutManager layoutManager;
     private static RecyclerView recyclerView;
     private CustomAdapter adapter = new CustomAdapter(new ArrayList<CategoryDataModel>());

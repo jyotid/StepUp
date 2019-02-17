@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.womandroid.stepup.LoginActivity;
 import com.womandroid.stepup.R;
 
 public class CategoryBasedPeopleListActivity extends AppCompatActivity {
