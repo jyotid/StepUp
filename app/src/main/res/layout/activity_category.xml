@@ -12,15 +12,20 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:id="@+id/categoryImg"
+            android:src="@drawable/categorybanner"
           android:scaleType="centerCrop"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:fontFamily="cursive"
+            android:text="@string/step_up_and_choose_your_own_path"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
     </RelativeLayout>
-    <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/categoryImg"
-      android:text="Some Text"
-      android:textSize="20dp"
-      android:gravity="center_horizontal"/>
+
     <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="0dp"
@@ -30,7 +35,6 @@
           android:id="@+id/recyclerView"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:scrollbars="vertical"
-          android:nestedScrollingEnabled="false"/>
+          android:scrollbars="vertical"/>
     </RelativeLayout>
 </LinearLayout>
