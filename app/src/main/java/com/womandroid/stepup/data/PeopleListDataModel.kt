@@ -3,6 +3,7 @@ package com.womandroid.stepup.data
 import android.os.Parcel
 import android.os.Parcelable
 
+
 class PeopleListDataModel() : Parcelable {
 
     var name: String? = null
@@ -19,6 +20,10 @@ class PeopleListDataModel() : Parcelable {
         professionalTitle = parcel.readString()
         location = parcel.readString()
         description = parcel.readString()
+        courses = parcel.createTypedArrayList(CoursesDataModel.CREATOR)
+        questionsMentor = parcel.createTypedArrayList(QuestionsDataModel.CREATOR)
+
+
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -27,6 +32,9 @@ class PeopleListDataModel() : Parcelable {
         parcel.writeString(professionalTitle)
         parcel.writeString(location)
         parcel.writeString(description)
+        parcel.writeList(courses)
+        parcel.writeList(questionsMentor)
+
     }
 
     override fun describeContents(): Int {

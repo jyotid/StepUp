@@ -9,7 +9,7 @@ import com.womandroid.stepup.R
 import com.womandroid.stepup.data.CoursesDataModel
 import kotlinx.android.synthetic.main.item_courses.view.*
 
-class CoursesAdapter(val context: Context, val data : List<CoursesDataModel>) : RecyclerView.Adapter<ViewHolder>() {
+class CoursesAdapter(val context: Context, val data : List<CoursesDataModel>?) : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
 
@@ -17,14 +17,27 @@ class CoursesAdapter(val context: Context, val data : List<CoursesDataModel>) : 
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, p1: Int) {
-        viewHolder.tvCourseName?.text = data[p1].courseName
-        viewHolder.tvCourseDesc?.text = data[p1].duration
+        when {
+            p1==0 -> {
+                viewHolder.tvCourseName?.text = "Rx java and Android"
+                viewHolder.tvCourseDesc?.text = "6 months"
+            }
+            p1%2 ==0 -> {
+                viewHolder.tvCourseName?.text = "XML Architeture"
+                viewHolder.tvCourseDesc?.text = "5 months"
+            }
+            else -> {
+                viewHolder.tvCourseName?.text = "CS Fundamentals"
+                viewHolder.tvCourseDesc?.text = "9 months"
+            }
+        }
+
 
     }
 
     // Gets the number of animals in the list
     override fun getItemCount(): Int {
-        return data.size
+        return 6
     }
 }
 

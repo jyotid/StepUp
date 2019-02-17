@@ -18,27 +18,28 @@ import com.womandroid.stepup.QuestionAskedAdpter
 import com.womandroid.stepup.R
 import kotlinx.android.synthetic.main.activity_profile_description.*
 import android.view.ViewGroup
+import com.womandroid.stepup.data.CoursesDataModel
+import com.womandroid.stepup.data.PeopleListDataModel
+import com.womandroid.stepup.data.QuestionsDataModel
 
 
 class ProfileDescriptionActivity : AppCompatActivity() {
 
-    companion object {
-        @JvmStatic
-        fun getIntent(context: Context): Intent {
-            return Intent(context, ProfileDescriptionActivity::class.java)
-        }
-    }
+    var data : PeopleListDataModel? = null
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_description)
+        data = intent.getParcelableExtra("person")
         initViews()
     }
 
     private fun initViews() {
         rvCourses.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvCourses.adapter = CoursesAdapter(this, mutableListOf())
+        rvCourses.adapter = CoursesAdapter(this, data = mutableListOf())
         rvCourses.itemAnimator = DefaultItemAnimator()
 
 
@@ -46,6 +47,8 @@ class ProfileDescriptionActivity : AppCompatActivity() {
         rvQuestions.adapter = QuestionAskedAdpter(this, mutableListOf())
         rvQuestions.itemAnimator = DefaultItemAnimator()
         ViewCompat.setNestedScrollingEnabled(rvQuestions, false)
+
+        desc.text = data?.description
 
         tvAskQuestion.setOnClickListener {
             showAskQuestionDialog()

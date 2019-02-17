@@ -15,12 +15,25 @@ class QuestionAskedAdpter(val context: Context, val data: List<QuestionsDataMode
     }
 
     override fun onBindViewHolder(viewHolder: QuestionViewHolder, p1: Int) {
-        viewHolder.question?.text = data[p1].question
-        viewHolder.answer?.text = data[p1].answer
+        when {
+            p1==0 -> {
+                viewHolder.question?.text = "How can I approach towards giving tech talks?"
+                viewHolder.answer?.text = "You can start to apply in some on of the local conference"
+            }
+            p1%2 ==0 -> {
+                viewHolder.question?.text = "How to learn coding?"
+                viewHolder.answer?.text = "Join a meetup. Practise regularly. Build stuff"
+            }
+            else -> {
+                viewHolder.question?.text = "What makes a good entrepreneur?"
+                viewHolder.answer?.text = "Ability to take risks. Planning. Execution."
+            }
+        }
+
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return 6
     }
 }
 
