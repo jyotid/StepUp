@@ -36,20 +36,20 @@ class ProfileDescriptionActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        rvCourses.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvCourses.adapter = CoursesAdapter(this)
-        rvCourses.itemAnimator = DefaultItemAnimator()
-
-
-        rvQuestions.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvQuestions.adapter = QuestionAskedAdpter(this)
-        rvQuestions.itemAnimator = DefaultItemAnimator()
-        ViewCompat.setNestedScrollingEnabled(rvQuestions, false)
-
-        tvAskQuestion.setOnClickListener {
-            showAskQuestionDialog()
-        }
-
+//        rvCourses.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+//        rvCourses.adapter = CoursesAdapter(this)
+//        rvCourses.itemAnimator = DefaultItemAnimator()
+//
+//
+//        rvQuestions.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+//        rvQuestions.adapter = QuestionAskedAdpter(this)
+//        rvQuestions.itemAnimator = DefaultItemAnimator()
+//        ViewCompat.setNestedScrollingEnabled(rvQuestions, false)
+//
+//        tvAskQuestion.setOnClickListener {
+//            showAskQuestionDialog()
+//        }
+//
 
     }
 
