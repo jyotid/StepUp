@@ -39,9 +39,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                           int viewType) {
+        int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.cards_layout, parent, false);
+            .inflate(R.layout.cards_layout, parent, false);
 
         view.setOnClickListener(CategoriesActivity.myOnClickListener);
 
@@ -56,7 +56,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         ImageView imageView = holder.imageViewIcon;
 
         textViewName.setText(dataSet.get(listPosition).name);
-       // imageView.setImageResource(dataSet.get(listPosition).id);
+        imageView.setImageResource(dataSet.get(listPosition).image);
     }
 
     @Override
