@@ -14,9 +14,11 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.FrameLayout;
 import com.womandroid.stepup.R;
+import com.womandroid.stepup.data.CoursesDataModel;
 import com.womandroid.stepup.data.DataModelDesc;
 import com.womandroid.stepup.data.MyData;
 
+import com.womandroid.stepup.data.PeopleListDataModel;
 import com.womandroid.stepup.profile.ProfileDescriptionActivity;
 import java.util.ArrayList;
 

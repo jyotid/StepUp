@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v4.view.ViewCompat
 import android.support.v7.widget.DefaultItemAnimator
@@ -48,6 +49,14 @@ class ProfileDescriptionActivity : AppCompatActivity() {
 
         tvAskQuestion.setOnClickListener {
             showAskQuestionDialog()
+        }
+
+        handshake.setOnClickListener {
+            Snackbar.make(
+                    llview, // Parent view
+                    "Your request has been sent to mentor", // Message to show
+                    Snackbar.LENGTH_SHORT // How long to display the message.
+            ).show()
         }
 
 
