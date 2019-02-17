@@ -73,6 +73,11 @@ class ProfileDescriptionActivity : AppCompatActivity() {
         val btnSubmit = dialog.findViewById(R.id.btnSubmitQuestion) as Button
         val etAskQuestion = dialog.findViewById(R.id.etAskQuestion) as EditText
         btnSubmit.setOnClickListener {
+            Snackbar.make(
+                    llview, // Parent view
+                    "Your query is been submitted", // Message to show
+                    Snackbar.LENGTH_SHORT // How long to display the message.
+            ).show()
             dialog.cancel()
         }
 
