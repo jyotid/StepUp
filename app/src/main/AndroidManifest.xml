@@ -33,7 +33,7 @@
         android:name=".categories.CategoryActivity"
         android:screenOrientation="portrait" />
 
-      <activity android:name=".categories.CategoryDescriptionActivity"></activity>
+      <activity android:name=".categories.CategoryBasedPeopleListActivity"></activity>
     </application>
 
 
