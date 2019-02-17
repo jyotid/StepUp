@@ -16,8 +16,8 @@ public class LoginActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
-    Intent intent = new Intent(LoginActivity.this,CategoriesActivity.class);
-    startActivity(intent);
+//    Intent intent = new Intent(LoginActivity.this,CategoriesActivity.class);
+//    startActivity(intent);
   }
 
   public void onLoginButtonClick(View view){
